@@ -1,7 +1,4 @@
-import os
-
 import json
-import pandas as pd
 import os
 import datasets
 
@@ -52,20 +49,20 @@ def main():
             ds = datasets.Dataset.from_dict(
                 {'subject': [''] * 1000, 'body': [''] * 1000, 'label': [0, 1] * 500}).map(phishing_prompt)
             ds = ds.map(lambda x: {'trg': ''}).select_columns(['src', 'trg', 'label'])
-            with open('data/phishing/samples.jsonl', 'w', encoding='utf-8') as f:
+            with open(os.path.join('data', 'phishing', 'samples.jsonl'), 'w', encoding='utf-8') as f:
                 for example in ds:
                     f.write(json.dumps(example) + '\n')
         if sub_folder == 'thumbs-up':
             ds = datasets.Dataset.from_dict({'review': [''] * 1000, 'label': [0, 1, 2, 3, 4] * 200}).map(
                 thumbs_up_prompt)
             ds = ds.select_columns(['src', 'trg', 'label'])
-            with open('data/thumbs-up/samples.jsonl', 'w', encoding='utf-8') as f:
+            with open(os.path.join('data', 'thumbs-up', 'samples.jsonl'), 'w', encoding='utf-8') as f:
                 for example in ds:
                     f.write(json.dumps(example) + '\n')
         if sub_folder == 'webmd':
             ds = datasets.Dataset.from_dict({'Reviews': [''] * 1000, 'label': [0, 1, 2, 3, 4] * 200}).map(webmd_prompt)
             ds = ds.select_columns(['src', 'trg', 'label'])
-            with open('data/webmd/samples.jsonl', 'w', encoding='utf-8') as f:
+            with open(os.path.join('data', 'webmd', 'samples.jsonl'), 'w', encoding='utf-8') as f:
                 for example in ds:
                     f.write(json.dumps(example) + '\n')
         if sub_folder == 'swmh':
@@ -74,14 +71,14 @@ def main():
                                                        'self.depression', 'self.offmychest',
                                                        'self.SuicideWatch'] * 200}).map(swmh_prompt)
             ds = ds.select_columns(['src', 'trg', 'label'])
-            with open('data/swmh/samples.jsonl', 'w', encoding='utf-8') as f:
+            with open(os.path.join('data', 'swmh', 'samples.jsonl'), 'w', encoding='utf-8') as f:
                 for example in ds:
                     f.write(json.dumps(example) + '\n')
         if sub_folder == 'drugs':
             ds = datasets.Dataset.from_dict({'text': [''] * 10000,
                                              'label': [0, 1] * 5000}).map(drugs_prompt)
             ds = ds.select_columns(['src', 'trg', 'label'])
-            with open('data/drugs/samples.jsonl', 'w', encoding='utf-8') as f:
+            with open(os.path.join('data', 'drugs', 'samples.jsonl'), 'w', encoding='utf-8') as f:
                 for example in ds:
                     f.write(json.dumps(example) + '\n')
 
