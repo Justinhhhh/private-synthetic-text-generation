@@ -1,13 +1,3 @@
-#!/bin/bash
-#
-#SBATCH --job-name=bart-s-p
-#SBATCH --output=/ukp-storage-1/ochs/bart-s-p.txt
-#SBATCH --account=ukp-researcher
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=64GB
-#SBATCH --gres=gpu:1
-
 cd baselines
 
 # phishing
@@ -25,8 +15,8 @@ python inference.py --dataset swmh --model_path ../models/swmh/np/bart/004356
 python inference.py --dataset thumbs-up --model_path ../models/thumbs-up/eps3/bart/171689
 python inference.py --dataset thumbs-up --model_path ../models/thumbs-up/eps8/bart/171707
 python inference.py --dataset thumbs-up --model_path ../models/thumbs-up/np/bart/019336
-# webmd
 
+# webmd
 python inference.py --dataset webmd --model_path ../models/webmd/eps3/bart/156678
 python inference.py --dataset webmd --model_path ../models/webmd/eps8/bart/156837
 python inference.py --dataset webmd --model_path ../models/webmd/np/bart/017672
