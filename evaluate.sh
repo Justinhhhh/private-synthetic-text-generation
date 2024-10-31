@@ -1,13 +1,3 @@
-#!/bin/bash
-#
-#SBATCH --job-name=phishing-results
-#SBATCH --output=/ukp-storage-1/ochs/phishing-results.txt
-#SBATCH --account=ukp-researcher
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=64GB
-#SBATCH --gres=gpu:1
-
 # phishing
 python evaluation.py --data_file results/phishing/eps3/bart/samples.jsonl --dataset phishing
 python evaluation.py --data_file results/phishing/eps8/bart/samples.jsonl --dataset phishing
@@ -33,7 +23,6 @@ python evaluation.py --data_file results/phishing/eps3/genie/samples.jsonl --dat
 python evaluation.py --data_file results/phishing/eps8/genie/samples.jsonl --dataset phishing
 python evaluation.py --data_file results/phishing/np/genie/samples.jsonl --dataset phishing
 
-:'
 # swmh
 python evaluation.py --data_file results/swmh/eps3/bart/samples.jsonl --dataset swmh
 python evaluation.py --data_file results/swmh/eps8/bart/samples.jsonl --dataset swmh
@@ -110,4 +99,4 @@ python evaluation.py --data_file results/webmd/np/seqdiffuseq/samples.jsonl --da
 python evaluation.py --data_file results/webmd/eps3/genie/samples.jsonl --dataset webmd
 python evaluation.py --data_file results/webmd/eps8/genie/samples.jsonl --dataset webmd
 python evaluation.py --data_file results/webmd/np/genie/samples.jsonl --dataset webmd
-'
+
