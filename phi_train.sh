@@ -1,13 +1,3 @@
-#!/bin/bash
-#
-#SBATCH --job-name=phi-baseline
-#SBATCH --output=/ukp-storage-1/ochs/phi-baseline.txt
-#SBATCH --account=ukp-researcher
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=64GB
-#SBATCH --gres=gpu:a100:1
-
 cd baselines
 
 # np
