@@ -1,13 +1,3 @@
-#!/bin/bash
-#
-#SBATCH --job-name=diffuseq
-#SBATCH --output=/ukp-storage-1/ochs/diffuseq.txt
-#SBATCH --account=ukp-researcher
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=128GB
-#SBATCH --gres=gpu:1
-
 cd DiffuSeq
 
 python train.py --data_dir ../data/phishing --dataset phishing --learning_steps 20000 --batch_size 32
