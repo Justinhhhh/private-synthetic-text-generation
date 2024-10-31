@@ -68,5 +68,4 @@ Please use the following citation:
 
 ## Disclaimer
 
-> This repository contains experimental software and is published for the sole purpose of giving additional background details on the respective publication. # private-synthetic-text-generation
-TODO
+> This repository contains experimental software and is published for the sole purpose of giving additional background details on the respective publication. 
