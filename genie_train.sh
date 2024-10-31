@@ -1,15 +1,3 @@
-#!/bin/bash
-#
-#SBATCH --job-name=genie
-#SBATCH --output=/ukp-storage-1/ochs/genie.txt
-#SBATCH --account=ukp-researcher
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=128GB
-#SBATCH --gres=gpu:1
-#SBATCh --constraint="gpu_mem:80gb"
-
-
 cd GENIE
 
 # np
