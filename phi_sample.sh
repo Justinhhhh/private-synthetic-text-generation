@@ -1,13 +1,3 @@
-#!/bin/bash
-#
-#SBATCH --job-name=phi-e8
-#SBATCH --output=/ukp-storage-1/ochs/phi-e8.txt
-#SBATCH --account=ukp-researcher
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=64GB
-#SBATCH --gres=gpu:1
-
 cd baselines
 
 # phishing
