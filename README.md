@@ -5,6 +5,9 @@
 [![Anaconda 24.3.0](https://img.shields.io/badge/Anaconda-24.3.0-green)](https://anaconda.org/anaconda/conda/files?sort=time&sort_order=desc&type=&version=24.3.0)
 [![PyTorch 2.3.0](https://img.shields.io/badge/PyTorch-2.3.0-lightgrey)](https://pytorch.org/get-started/previous-versions/#v230)
 
+
+## Replication
+For our setup, install the environment and download the pretrained weights for GENIE. Place them in the GENIE directory. Then, create the appropriate dataset folders under the data directory. Use main.py to generate the training, validation, testing, and sampling datasets for fine-tuning and sampling.
 ## Description
 
 This repository contains the source code to replicate the experimental results in our paper.
