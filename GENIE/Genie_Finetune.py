@@ -9,7 +9,7 @@ import torch
 from torch.serialization import default_restore_location
 from transformers import AutoTokenizer
 from transformers import set_seed
-
+import math
 from data_util.s2s_data_util import load_s2s_data, S2S_dataset
 from diffusion_util.resample import create_named_schedule_sampler
 from train_util.train_util import TrainLoop
@@ -154,7 +154,8 @@ def main():
     # make private
     if args.private:
         privacy_engine = opacus.PrivacyEngine()
-        args.delta = 1 / (len(train_data) * 10)
+        # args.delta = 1 / (len(train_data) * 10) 
+        args.delta = 1/[len(train_data)* math.log(len(train_data))]
         args.privacy_engine = privacy_engine
         model, optimizer, data_loader = privacy_engine.make_private_with_epsilon(
             epochs=math.ceil(args.learning_steps / len(data_loader)),
