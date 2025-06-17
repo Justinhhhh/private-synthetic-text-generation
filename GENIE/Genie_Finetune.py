@@ -155,7 +155,7 @@ def main():
     if args.private:
         privacy_engine = opacus.PrivacyEngine()
         # args.delta = 1 / (len(train_data) * 10) 
-        args.delta = 1/[len(train_data)* math.log(len(train_data))]
+        args.delta = 1/(len(train_data)* math.log(len(train_data)))
         args.privacy_engine = privacy_engine
         model, optimizer, data_loader = privacy_engine.make_private_with_epsilon(
             epochs=math.ceil(args.learning_steps / len(data_loader)),
